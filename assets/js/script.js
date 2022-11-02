@@ -4,7 +4,8 @@ let bombs = [];
 console.log(bombs);
 
 //score's variable
-let score = 0;
+let score = [];
+console.log(score);
 
 function play(){
 
@@ -71,7 +72,10 @@ function createGrid(difficulty, squares){
         let createdSquare = createSquare(squares);
         createdSquare.innerHTML = i;
         console.log('createdSquare', createdSquare);
-      
+
+        let scoreCounter =document.getElementById('score-counter'); 
+        scoreCounter.classList.add('acid-button');
+
         createdSquare.addEventListener('click', function(){
             console.log( "this keyword",this);
             //
@@ -80,11 +84,15 @@ function createGrid(difficulty, squares){
                 this.innerHTML = "BooM";
                 this.classList.add('boom-button');
                 
+                
             }else{
                 this.classList.add('acid-button');
+                score.push('point');
+                console.log(score);
+                scoreCounter.innerHTML = `your score is ${score.length} !!`;
             }
         })
-      
+        
         grid.append( createdSquare );
       
     }

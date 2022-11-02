@@ -30,7 +30,7 @@ nav{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 40%;
+    width: 35%;
     margin: 0 auto;
     /* aspect-ratio: 1/1; */
 }
@@ -124,4 +124,28 @@ nav{
 
 .neon-button:hover::after{
     opacity: 1;
+}
+
+
+
+.boom-button{
+    /* font-size: 2rem; */
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #202531;
+    color: red;
+    border: 0.125em solid red;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+
+    text-shadow: 0 0 0.125em white,
+    0 0 0.125 currentColor;
+
+    box-shadow: inset 0 0 0.5em 0 red,
+    0 0 0.5em 0 red;
+
+    position: relative;
+
+    transition: background-color 0.5s;
 }

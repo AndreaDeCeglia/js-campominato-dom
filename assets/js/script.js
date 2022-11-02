@@ -1,6 +1,16 @@
+
+//bombs' array
+let bombs = [];
+console.log(bombs);
+
+//score's variable
+let score = 0;
+
 function play(){
 
     document.getElementById('game-container').innerHTML = '';
+
+    bombs = [];
     //pick the value of the choise
     let choise = document.getElementById("inputGroupSelect04").value;
     console.log(choise);
@@ -26,9 +36,6 @@ function createSquare(squares){
     return div;
 }
 
-//bombs' array
-let bombs = [];
-
 //randomic number function
 function randomic(difficulty){
 
@@ -40,6 +47,8 @@ function randomic(difficulty){
             bombs.push(randomNumber);
         }
     }
+
+    console.log(bombs);
 }
 
 
@@ -54,9 +63,8 @@ function createGrid(difficulty, squares){
     let grid = document.getElementById('game-container');
     console.log( "grid", grid );
 
-    //let difficulty = choise.value;
+    randomic(difficulty);
 
-    //createSquare(squares);
 
     for( let i = 1; i <= difficulty; i++ ){
 
@@ -66,7 +74,15 @@ function createGrid(difficulty, squares){
       
         createdSquare.addEventListener('click', function(){
             console.log( "this keyword",this);
-            this.classList.toggle('acid-button');
+            //
+            if( bombs.includes(parseInt(this.innerHTML))){
+                //booooom
+                this.innerHTML = "BooM";
+                this.classList.add('boom-button');
+                
+            }else{
+                this.classList.add('acid-button');
+            }
         })
       
         grid.append( createdSquare );

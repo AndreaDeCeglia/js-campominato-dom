@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>campominato</title>
+
+    <!-- Bootstrap v5.2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- my style.css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- total container of the page -->
+    <div id="total-container m-0">
+      <!-- upper part - navbar -->
+      
+        <nav class="navbar container-fluid h-50 p-1">
+        <!-- logo's spot -->
+            <span>
+                <div>
+                    <a class="navbar-brand" href="#">
+                        <h4 class="acid-button">
+                          MINEFIELD
+                        </h4>
+                    </a>
+                </div>
+            </span>
+
+            <span>
+              <h6 class="acid-button">
+                choose the level .. Good Luck !!! --->
+              </h6>
+            </span>
+            
+            <!-- input group spot / difficulty choise and play-btn -->
+            <span class="input-group">
+                <select
+                  class="form-select acid-button"
+                  id="inputGroupSelect04"
+                  aria-label="Example select with button addon"
+                >
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+    
+                <button id="play-btn" onclick="play(); return false" class="btn acid-button" type="button">
+                  Play
+                </button>
+            </span>
+        </nav>
+
+        <div id="game-container" class="my-4 acid-button"></div>
+        
+    </div>
+
+    <!-- my script.js -->
+    <script src="./assets/js/script.js"></script>
+
+
+    <!-- Bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

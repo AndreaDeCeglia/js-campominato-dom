@@ -26,6 +26,22 @@ function createSquare(squares){
     return div;
 }
 
+//bombs' array
+let bombs = [];
+
+//randomic number function
+function randomic(difficulty){
+
+    for( let x=0; x<16; x++){
+        let randomNumber = Math.round(Math.random() * (difficulty - 1 + 1)) + 1;
+        if( bombs.includes(randomNumber)){
+            x--;
+        }else{
+            bombs.push(randomNumber);
+        }
+    }
+}
+
 
 
 //let playBtn = document.getElementById('play-btn');

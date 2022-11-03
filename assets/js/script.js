@@ -71,25 +71,31 @@ function createGrid(difficulty, squares){
 
         let createdSquare = createSquare(squares);
         createdSquare.innerHTML = i;
-        console.log('createdSquare', createdSquare);
+        console.log('createdSquare', createdSquare);68
+
 
         let scoreCounter =document.getElementById('score-counter'); 
-        scoreCounter.classList.add('acid-button');
+        scoreCounter.classList.add('acid-text');
 
         createdSquare.addEventListener('click', function(){
             console.log( "this keyword",this);
             //
             if( bombs.includes(parseInt(this.innerHTML))){
                 //booooom
-                this.innerHTML = "BooM";
+                //this.innerHTML = "BooM";
                 this.classList.add('boom-button');
-                
+                alert(`what a pity ... you're blowen up !!`);
+                location.reload();
                 
             }else{
-                this.classList.add('acid-button');
-                score.push('point');
-                console.log(score);
-                scoreCounter.innerHTML = `your score is ${score.length} !!`;
+                if(!this.classList.contains('acid-button')){
+                    this.classList.add('acid-button');
+                    score.push('point');
+                    console.log(score);
+                    scoreCounter.innerHTML = `your score is ${score.length} !!`;
+                }
+                
+                
             }
         })
         
